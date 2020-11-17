@@ -1,5 +1,5 @@
 # deploy-aws
-
+#comment: $1 is file name / $2 is lambda name
 
 .PHONY: build zip deploy
 
@@ -9,3 +9,5 @@ zip:
     zip -j ~/environment/zip-files/main.zip ~/environment/build-files/main
 deploy: 
     aws lambda update-function-code --function-name $2 --zip-file fileb://~/environment/zip-files/main.zip
+
+
